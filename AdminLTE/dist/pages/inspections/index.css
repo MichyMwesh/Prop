@@ -408,3 +408,30 @@ select {
     width: 100%;
     border-radius: 5px;
     }
+
+    /* Summary Styles */
+    .text{
+      display: block;
+      margin-bottom: 5px;
+      line-height: 11px; 
+      font-size: 11px;
+      font-weight: 600; 
+      letter-spacing: .5px; 
+      text-transform: uppercase;
+      color: #767676;
+      color: #00192D;
+      font-family: 'Poppins', sans-serif;
+  
+      }
+      .value{
+          font-size: 11px; 
+          display: flex;
+          justify-content: center;
+          color: #FFC107;
+          background-color: #00192D;
+          border-radius: 10px;
+      }
+
+      a{
+        color: #00192D;
+      }
