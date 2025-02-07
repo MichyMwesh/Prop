@@ -585,20 +585,6 @@ color: #00192D;
                 </a>
               </li>
 
-              <li class="nav-item">
-                <a href="./serviceproviders.html" class="nav-link">
-                  <i class="nav-icon bi bi-palette"></i>
-                  <p>Service Providers</p>
-                </a>
-              </li>
-              
-              <li class="nav-item">
-                <a href="./rating&reviews.html" class="nav-link">
-                  <i class="nav-icon bi bi-palette"></i>
-                  <p>Reviews And Rating</p>
-                </a>
-              </li>
-
                 <!-- Start Communications part -->
                 <li class="nav-item">
                   <a href="#" class="nav-link">
@@ -1042,7 +1028,9 @@ color: #00192D;
     <div class="custom-button"> -->
 
       <div class="contenting" >
-        <button class="open-overlay-btn" onclick="openOverlay()">Add New Tenant</button>
+        <button class="open-overlay-btn" onclick="openOverlay()">
+          <i class="fas fa-plus"></i>
+          Add Tenant</button>
         </div> <br>
 <!-- </div> -->
 
@@ -1161,39 +1149,24 @@ color: #00192D;
       <div class="overlay-content">
         <button class="close-overlay-btn" onclick="closeOverlay()">X</button>
           <h2>Add New Tenant</h2>
-          <form id="tenant-form">
-              <div class="form-group">
-                  <label for="tenant-name">Tenant Name</label>
-                  <input type="text" id="tenant-name" name="tenant-name" required>
-              </div>
-              <div class="form-group">
-                  <label for="tenant-email">Email</label>
-                  <input type="email" id="tenant-email" name="tenant-email" required>
-              </div>
-              <div class="form-group">
-                  <label for="tenant-phone">Phone Number</label>
-                  <input type="text" id="tenant-phone" name="tenant-phone" required>
-              </div>
-              <div class="form-group">
-                <label for="tenant-phone">Type</label>
-                <input type="text" id="tenant-type" name="tenant-type" required>
-            </div>
-              <div class="form-group">
-                <label for="tenant-phone">Unit</label>
-                <input type="text" id="tenant-unit" name="tenant-unit" required>
-            </div>
-
-              <div class="form-group">
-                  <label for="property">Property</label>
-                  <select id="property" name="property" required>
-                      <option value="">Select Property</option>
-                      <option value="Apartment 1">Apartment 1</option>
-                      <option value="Apartment 2">Apartment 2</option>
-                      <option value="House 1">House 1</option>
-                      <option value="House 2">House 2</option>
-                  </select>
-              </div>
-
+          <form id="addTenantForm">
+            <label for="tenantName">Tenant Name</label>
+            <input type="text" id="tenantName" placeholder="Enter tenant name" required />
+      
+            <label for="tenantEmail">Email</label>
+            <input type="email" id="tenantEmail" placeholder="Enter tenant email" required />
+      
+            <label for="tenantPhone">Phone</label>
+            <input type="tel" id="tenantPhone" placeholder="Enter tenant phone" required />
+      
+            <!-- <label for="tenantApartment">Apartment Number</label>
+            <input type="text" id="tenantApartment" placeholder="Enter apartment number" required />
+       -->
+            <label for="tenantApartment">Property</label>
+            <input type="text" id="tenantApartment" placeholder="Enter apartment number" required />
+      
+            
+            <button type="submit" style="border-radius: 10px; position:center;background-color:  #00192D; color: #FFC107; width: 120px; height:50px;">Add</button>
           </form>
          
       </div>

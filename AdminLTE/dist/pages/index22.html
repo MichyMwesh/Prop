@@ -58,206 +58,133 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="chatbot.html">
     <style>
-      a{
-          text-decoration: none;
-      }
-      
-      body{
-          
-          background-color: rgba(128, 128, 128, 0.1);
-      }
-      .summaryItem{
-          font-family: 'Playfair Display', serif; /* Elegant for creative projects */
-font-size: 25px;
-font-weight: bold;
-
-font-weight: 400; /* Lighter weight for a faint look */
-letter-spacing: 1px; /* Slight spacing for an airy feel */
-color:gray;
-
-      }
-      .summaryItemOne{
-          font-family: 'Playfair Display', serif; /* Elegant for creative projects */
-font-size: 25px;
-font-weight: bold;
-
-font-weight: 400; /* Lighter weight for a faint look */
-letter-spacing: 1px; /* Slight spacing for an airy feel */
-color: #00192D;
-
-      }
-      .custom-btn{
-          background-color: #00192D;
-  border-color: #00192D;
-  color:  #FFC107; /* White background */
-      }
-
-  .statement{
-      background-color: #FFC107;
-      color: #00192D ;
-
-      }
-
-      .profile-card {
-    background-color: #f8f9fa;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    /* padding: 20px; */
-    
-    margin: 30px auto;
-  }
-  .profile-picture {
-    border-radius: 10px;
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border: 4px solid #007bff;
-  }
-  .profile-details h2 {
-    /* margin-bottom: 10px; */
-    
-  }
-  .profile-details p {
-    /* /margin: 5px 0; */
-    color: #6c757d;
-  }
-  .profile_details{
-      display: flex;
-      
-  }
-  .profile_picture{
-      margin-right: 4%;
-  }
-  .profile_info .one{
-      color: #666;
-      font-size: 14px;
-      display: block;
-      text-align: justify;   
-
-  }
-  .other_profile_details{
-      display: block;
-      color: #666;
-      font-size: 14px;
-      display: block;
-      text-align: justify;
-  }
-  #myPieChart {
-      width: 360px;
-      height: 310px;
-      display: block;
-      margin: auto; /* Center it */
-  }
+        .card-container {
+            margin-left: 2rem;
+              background: #ffffff;
+              padding: 30px;
+              border-radius: 20px;
+              box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+              width: 100%;
+              max-width: 600px;
+              text-align: center;
+          }
   
-  .chat-container {
-            width: 400px;
-            height: 500px;
-            border: 2px solid #ccc;
-            border-radius: 10px;
-            background-color: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: 10px;
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            cursor: pointer;
-            display: none; /* Initially hidden */
-        }
+          h2 {
+              color: #333;
+              margin-bottom: 20px;
+          }
+  
+          table {
+              width: 100%;
+              border-collapse: collapse;
+              margin-bottom: 20px;
+              background: white;
+          }
+  
+          th, td {
+              padding: 12px;
+              border: 1px solid #ddd;
+              text-align: left;
+          }
+  
+          th {
+              background: #ffc107;
+              color: black;
+              text-align: center;
+          }
+  
+          .section {
+              background: #f8f9fa;
+              font-weight: bold;
+              text-align: center;
+          }
+  
+          .upload1-container {
+              margin: 20px 0;
+              padding: 15px;
+              border: 2px dashed #ccc;
+              border-radius: 10px;
+              background: #fff;
+              text-align: center;
+          }
+  
+          .upload1-container input {
+              margin: 10px 0;
+          }
+  
+          .upload1-container img {
+              display: none;
+              margin-top: 10px;
+              width: 100%;
+              max-width: 200px;
+              border-radius: 5px;
+          }
+  
+          .actions {
+              text-align: center;
+              padding: 15px;
+          }
+  
+          .actions button {
+              margin: 5px;
+              padding: 10px 20px;
+              border: none;
+              color: white;
+              border-radius: 5px;
+              cursor: pointer;
+          }
+  
+          .approve {
+              background-color: #28a745;
+          }
+  
+          .reject {
+              background-color: #dc3545;
+          }
+  
+          .info {
+              background-color: #007bff;
+          }
+  
+          .approve:hover {
+              background-color: #218838;
+          }
+  
+          .reject:hover {
+              background-color: #c82333;
+          }
+  
+          .info:hover {
+              background-color: #0056b3;
+          }
 
-        .chat-box {
-            flex-grow: 1;
-            overflow-y: auto;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            margin-bottom: 10px;
-            background-color: #fafafa;
-        }
+         
+    /* Profile image container for circular effect */
+    .profile-image {
+      width: 100px;      /* Reduced width */
+      height: 100px;     /* Reduced height */
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto;
+      border: 2px solid #007bff; /* Smaller border */
+    }
 
-        .message {
-            padding: 8px;
-            margin-bottom: 10px;
-            border-radius: 5px;
-            max-width: 80%;
-        }
+    /* Style for the image */
+    .profile-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
 
-        .bot-message {
-            background-color: #e0f7fa;
-            align-self: flex-start;
-        }
-
-        .user-message {
-            background-color: #c8e6c9;
-            align-self: flex-end;
-        }
-
-        input {
-            padding: 10px;
-            width: calc(100% - 22px);
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        button {
-            padding: 10px;
-            width: 100%;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            /* background-color: #00796b; */
-            color: white;
-            cursor: pointer;
-        }
-       #iden{
-            padding: 10px;
-            width: 10%;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color:red; 
-            color: white;
-            cursor: pointer;
-}
-        button:hover{
-        background-color: #00192D;
-       } 
-
-        /* Style for the icon that triggers chatbox visibility */
-        .chat-icon {
-            position: sticky;
-            width: 50px;
-            height: 50px;
-            background-color: #00192D;
-            border-radius: 50%;
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-size: 30px;
-            cursor: pointer;
-        }
-
-        /* Smaller Close button inside chat container */
-        .close-btn {
-            position: absolute;
-            top: 10px;
-            margin-right: 0px;
-            right: 0px;
-            font-size: 16px; /* Smaller font size */
-            padding: 5px;  /* Smaller padding */
-            cursor: pointer;
-            color: #777;
-            background: none;
-            border: none;
-        }
-        #close{
-background-color: red;
-        }
-
+    /* User name style */
+    .profile-name {
+      margin-top: 10px;
+      font-size: 14px;  /* Smaller font size */
+      color: #333;
+      font-weight: bold;
+    }
+  
+        
   </style>
   </head>
   <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
@@ -1009,30 +936,58 @@ background-color: red;
         <div class="app-content">
           <!--begin::Container-->
           <div class="container-fluid">
-            
-<div class="container">
-  <h2>Cash Flow Forecasting</h2>
-  <form id="forecastForm">
-      <label for="rentalIncome">Monthly Rental Income (KSH): </label>
-      <input type="number" id="rentalIncome" placeholder="Enter Income" required>
-
-      <label for="expenses">Monthly Expenses (KSH): </label>
-      <input type="number" id="expenses" placeholder="Enter Expenses" required>
-
-      <label for="rentIncrease">Expected Rent Increase (%): </label>
-      <input type="number" id="rentIncrease" placeholder="Enter Rent Increase %" required>
-
-      <label for="months">Forecast Duration (months): </label>
-      <input type="number" id="months" placeholder="Enter Number of Months" required>
-
-      <button type="submit">Generate Forecast</button>
-  </form>
-
-  <div class="chart-container">
-      <canvas id="forecastChart"></canvas>
-  </div>
-</div>
-
+            <!--begin::Row-->
+            <div class="row">
+              <div class="col-sm-6"><h3 class="mb-0"></h3></div>
+              <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-end">
+                  <li class="breadcrumb-item"><a href="#">Home</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Dashboard v2</li>
+                </ol>
+              </div>
+            </div>
+            <!--end::Row-->
+          </div>
+          <!--end::Container-->
+        </div>
+                <div class="card card-container">
+                  <div class="card-body">
+                    <div class="profile-container">
+                      <!-- Circular Profile Image -->
+                      <div class="profile-image">
+                        <img src="./17.jpg" alt="User Profile">
+                      </div>
+                      <!-- User Name -->
+<div class="profile-name">John Doe</div>
+                      <h2>Application Detail Page</h2>
+          
+                      <table>
+                          <tr><th colspan="2">Application Details - John Doe</th></tr>
+                          <tr class="section"><td colspan="2">Personal Information</td></tr>
+                          <tr><td><b>Name:</b></td><td>John Doe</td></tr>
+                          <tr><td><b>Identity Number:</b></td><td>38789099</td></tr>
+                          <tr><td><b>Phone number:</b></td><td>0712345670</td></tr>
+                      </table>
+          
+                      <div class="upload1-container">
+                          <h2>Upload ID</h2>
+                          <input type="file" id="fileInput" accept="image/*" required onchange="previewFile()">
+                          <button class="best btn btn-warning" onclick="uploadImage()">UPLOAD</button>
+                          <p class="message" id="message"></p>
+                          <img id="previewImage" src="" alt="Preview">
+                      </div>
+          
+                      <table>
+                          <tr>
+                              <td colspan="2" class="actions">
+                                  <button class="approve" onclick="takeAction('Approved')">Approve</button>
+                                  <button class="reject" onclick="takeAction('Rejected')">Reject</button>
+                                  <button class="info" onclick="takeAction('Request Info')">Request Info</button>
+                              </td>
+                          </tr>
+                      </table>
+                  </div>
+              </div>
     <!--end::App Wrapper-->
     <!--begin::Script-->
     <!--begin::Third Party Plugin(OverlayScrollbars)-->
@@ -1427,7 +1382,48 @@ background-color: red;
       }
   });
 </script>
+<script>
+  function uploadImage() {
+      let fileInput = document.getElementById('fileInput');
+      let file = fileInput.files[0];
+
+      if (!file) {
+          document.getElementById('message').innerText = "Please select an image!";
+          return;
+      }
+
+      let formData = new FormData();
+      formData.append("image", file);
+
+      fetch("http://localhost:5000/upload", {
+          method: "POST",
+          body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+          document.getElementById('message').innerText = data.message;
+          // Show image preview
+          let reader = new FileReader();
+          reader.onload = function(e) {
+              let preview = document.getElementById('previewImage');
+              preview.src = e.target.result;
+              preview.style.display = "block";
+          };
+          reader.readAsDataURL(file);
+      })
+      .catch(error => {
+          console.error("Error:", error);
+          document.getElementById('message').innerText = "Upload failed!";
+      });
+  }
+</script>
+<script>
+    function takeAction(action) {
+        alert("Application has been " + action + "!");
+    }
+</script>
     </script>
+
     <!--end::Script-->
   </body>
   <!--end::Body-->
