@@ -42,7 +42,7 @@
     />
     <!--end::Third Party Plugin(Bootstrap Icons)-->
     <!--begin::Required Plugin(AdminLTE)-->
-    <link rel="stylesheet" href="../../dist/css/adminlte.css" />
+    <link rel="stylesheet" href="../../../dist/css/adminlte.css" />
     <link rel="stylesheet" href="text.css" />
     <!--end::Required Plugin(AdminLTE)-->
     <!-- apexcharts -->
@@ -54,229 +54,7 @@
     />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            columns: gray;
-        }
-
-        .filter-container{
-          
-            /* width: 250px; */
-          
-            color: white;
-            position: relative; /* To position the panel below */
-        
-        }
-        .nav-bar {
-            display: flex;
-            border-bottom: 1px solid #e0e0e0;
-        }
-        .nav-item {
-            padding: 10px 20px;
-            text-decoration: none;
-            color: #666;
-            font-size: 16px;
-            position: relative;
-        }
-        .nav-item.active {
-            color: #000;
-            font-weight: bold;
-        }
-        .nav-item.active::after {
-            content: '';
-            position: absolute;
-            bottom: -1px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background-color: #FFC107; /* Green underline */
-        }
-        
-
-        table {
-    border-collapse: collapse;
-    width: 100%;
-}
-th {
-    background-color: #FFC107;
-    color: #00192D;
-    text-align: left;
-    padding: 0.5em;
-    font-size: 0.9rem;
-}
-td {
-    padding: 0.5em;
-    text-align: left;
-    font-size: 0.9rem;
-    
-}
-tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-tr:hover {
-    background-color: #f1f1f1;
-}
-
-
-.filter:hover {
-            color: #FFC107;
-            
-        }
-.filter{
-            /* background-color: #444; */
-            /* color: white; */
-            cursor: pointer;
-            /* padding: 12%;  */
-            width: 25%;
-            border-bottom: gray solid 1px;
-            text-align: left;
-            outline: none;
-            font-size: 16px;
-            transition: 0.3s;
-            color: gray;
-            font-size: 100%;
-            border-radius: 2%;
-}
-
-.panel {
-            display: none; /* Initially hidden */
-            background-color: #00192D;
-            /* padding-left: 20px;position: absolute; Makes the panel an overlay */
-            position: absolute; /* Makes the panel an overlay */
-            /* left: 250px; Positioned to the right of the container */
-            top: 100%; /* Place right below the accordion */
-            left: 0;
-            width: fit-content;
-            z-index: 1000;
-            padding: 2%;
-            color: white;
-            border-radius: 4%;
-            
-        }
-.panel a {
-            display: block;
-            padding: 8px;
-            /* color: white; */
-            text-decoration: none;
-            transition: 0.3s;
-            color: whitesmoke;
-        }
-
-        .panel a:hover{
-          color: #FFC107;
-        }
-        
-/* Announcement Overlay styles */
-        #view_announcement {
-            /* width: 50%; Adjust the card width as needed */
-            /* max-width: 500px; Ensures the card doesn't grow too wide */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            display: none;
-            z-index: 10000;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            justify-content: center;
-            align-items: center;
-
-        }
-        .card.content{
-
-          position: relative;
-            background: white;
-            
-            border-radius: 5px;
-            
-            color: black;
-            width: 100%;
-            max-width: 50%; 
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            font-size: 90%;
-            color: gray;
-        }
-
-        .card-footer.view_announcement {
-            justify-content: flex-end;
-            
-        }
-
-        .card-footer .btn + .btn {
-            margin-left: 10px; /* Adds spacing between the buttons */
-        }
-
-        .close-btn{
-             position: absolute; 
-            
-            right: 15px;
-        
-            color: white;
-            cursor: pointer;
-            
-        }
-
-        #more{
-          display: flex;
-           justify-content: center;
-          cursor: pointer;
-
-        }
-        
-        #more_icon{
-          /* border: 1px solid black; */
-          border-radius: 30%;
-          padding: 10%;
-          font-size: larger;
-        }
-       
-        #more_options{
-          display: none;
-          /* position: absolute; */
-          z-index: 1000;
-          background: #00192D;
-          border-radius: 10%;
-          padding: 10px;
-          
-        }
-        #more_options a{
-          text-decoration: none;
-          color: white;
-        }
-        #more_options a:hover{
-          color: #FFC107;
-        }
-        #close-overlay-btn {
-            /* top: 0; */
-            color: white;
-            /* color: white; */
-            border: none;
-            cursor: pointer;
-            font-size: 100%; 
-              }
-          #close-overlay-btn:hover {
-              color: red;
-              }
-
-        .card-header.view_announcement {
-            position: relative; 
-            display: flex;/* Add this for the absolute positioning of the close button */
-        }
-#more_announcement_btn{
-  color: blueviolet;
-  font-weight: 500;
-  cursor: pointer;
-
-}
-#more_announcement_btn:hover{
-  background-color: rgba(128, 128, 128, 0.2);
-  color: #FFC107;
-}
-
-
-        </style>
-
+   <link rel="stylesheet" href="maintanceRequests.css">
 <!-- scripts for data_table -->
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
 
@@ -323,7 +101,7 @@ tr:hover {
                   <div class="d-flex">
                     <div class="flex-shrink-0">
                       <img
-                        src="../../dist/assets/img/user1-128x128.jpg"
+                        src="../../../dist/assets/img/user1-128x128.jpg"
                         alt="User Avatar"
                         class="img-size-50 rounded-circle me-3"
                       />
@@ -349,7 +127,7 @@ tr:hover {
                   <div class="d-flex">
                     <div class="flex-shrink-0">
                       <img
-                        src="../../dist/assets/img/user8-128x128.jpg"
+                        src="../../../dist/assets/img/user8-128x128.jpg"
                         alt="User Avatar"
                         class="img-size-50 rounded-circle me-3"
                       />
@@ -375,7 +153,7 @@ tr:hover {
                   <div class="d-flex">
                     <div class="flex-shrink-0">
                       <img
-                        src="../../dist/assets/img/user3-128x128.jpg"
+                        src="../../../dist/assets/img/user3-128x128.jpg"
                         alt="User Avatar"
                         class="img-size-50 rounded-circle me-3"
                       />
@@ -450,7 +228,7 @@ tr:hover {
                 <!--begin::User Image-->
                 <li class="user-header text-bg-primary">
                   <img
-                    src="../../dist/assets/img/user2-160x160.jpg"
+                    src="../../../dist/assets/img/user2-160x160.jpg"
                     class="rounded-circle shadow"
                     alt="User Image"
                   />
@@ -494,7 +272,7 @@ tr:hover {
           <a href="./index.html" class="brand-link">
             <!--begin::Brand Image-->
             <img
-              src="../../dist/assets/img/AdminLTELogo.png"
+              src="../../../dist/assets/img/AdminLTELogo.png"
               alt="AdminLTE Logo"
               class="brand-image opacity-75 shadow"
             />
@@ -507,431 +285,7 @@ tr:hover {
         </div>
         <!--end::Sidebar Brand-->
         <!--begin::Sidebar Wrapper-->
-        <div class="sidebar-wrapper">
-          <nav class="mt-2">
-            <!--begin::Sidebar Menu-->
-            <ul
-              class="nav sidebar-menu flex-column"
-              data-lte-toggle="treeview"
-              role="menu"
-              data-accordion="false"
-            >
-              <li class="nav-item menu-open">
-                <a href="#" class="nav-link active">
-                  <i class="nav-icon bi bi-speedometer"></i>
-                  <p>
-                    Dashboard
-                    <i class="nav-arrow bi bi-chevron-right"></i>
-                  </p>
-                </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="./index.html" class="nav-link">
-                      <i class="nav-icon bi bi-circle"></i>
-                      <p>Dashboard v1</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="./index2.html" class="nav-link active">
-                      <i class="nav-icon bi bi-circle"></i>
-                      <p>Dashboard v2</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="./index3.html" class="nav-link">
-                      <i class="nav-icon bi bi-circle"></i>
-                      <p>Dashboard v3</p>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a href="./generate/theme.html" class="nav-link">
-                  <i class="nav-icon bi bi-palette"></i>
-                  <p>Theme Generate</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon bi bi-box-seam-fill"></i>
-                  <p>
-                    Widgets
-                    <i class="nav-arrow bi bi-chevron-right"></i>
-                  </p>
-                </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="./widgets/small-box.html" class="nav-link">
-                      <i class="nav-icon bi bi-circle"></i>
-                      <p>Small Box</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="./widgets/info-box.html" class="nav-link">
-                      <i class="nav-icon bi bi-circle"></i>
-                      <p>info Box</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="./widgets/cards.html" class="nav-link">
-                      <i class="nav-icon bi bi-circle"></i>
-                      <p>Cards</p>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon bi bi-clipboard-fill"></i>
-                  <p>
-                    Layout Options
-                    <span class="nav-badge badge text-bg-secondary me-3">6</span>
-                    <i class="nav-arrow bi bi-chevron-right"></i>
-                  </p>
-                </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="./layout/unfixed-sidebar.html" class="nav-link">
-                      <i class="nav-icon bi bi-circle"></i>
-                      <p>Default Sidebar</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="./layout/fixed-sidebar.html" class="nav-link">
-                      <i class="nav-icon bi bi-circle"></i>
-                      <p>Fixed Sidebar</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="./layout/layout-custom-area.html" class="nav-link">
-                      <i class="nav-icon bi bi-circle"></i>
-                      <p>Layout <small>+ Custom Area </small></p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="./layout/sidebar-mini.html" class="nav-link">
-                      <i class="nav-icon bi bi-circle"></i>
-                      <p>Sidebar Mini</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="./layout/collapsed-sidebar.html" class="nav-link">
-                      <i class="nav-icon bi bi-circle"></i>
-                      <p>Sidebar Mini <small>+ Collapsed</small></p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="./layout/logo-switch.html" class="nav-link">
-                      <i class="nav-icon bi bi-circle"></i>
-                      <p>Sidebar Mini <small>+ Logo Switch</small></p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="./layout/layout-rtl.html" class="nav-link">
-                      <i class="nav-icon bi bi-circle"></i>
-                      <p>Layout RTL</p>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon bi bi-tree-fill"></i>
-                  <p>
-                    UI Elements
-                    <i class="nav-arrow bi bi-chevron-right"></i>
-                  </p>
-                </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="./UI/general.html" class="nav-link">
-                      <i class="nav-icon bi bi-circle"></i>
-                      <p>General</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="./UI/icons.html" class="nav-link">
-                      <i class="nav-icon bi bi-circle"></i>
-                      <p>Icons</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="./UI/timeline.html" class="nav-link">
-                      <i class="nav-icon bi bi-circle"></i>
-                      <p>Timeline</p>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon bi bi-pencil-square"></i>
-                  <p>
-                    Forms
-                    <i class="nav-arrow bi bi-chevron-right"></i>
-                  </p>
-                </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="./forms/general.html" class="nav-link">
-                      <i class="nav-icon bi bi-circle"></i>
-                      <p>General Elements</p>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon bi bi-table"></i>
-                  <p>
-                    Tables
-                    <i class="nav-arrow bi bi-chevron-right"></i>
-                  </p>
-                </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="./tables/simple.html" class="nav-link">
-                      <i class="nav-icon bi bi-circle"></i>
-                      <p>Simple Tables</p>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-header">EXAMPLES</li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon bi bi-box-arrow-in-right"></i>
-                  <p>
-                    Auth
-                    <i class="nav-arrow bi bi-chevron-right"></i>
-                  </p>
-                </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      <i class="nav-icon bi bi-box-arrow-in-right"></i>
-                      <p>
-                        Version 1
-                        <i class="nav-arrow bi bi-chevron-right"></i>
-                      </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                      <li class="nav-item">
-                        <a href="./examples/login.html" class="nav-link">
-                          <i class="nav-icon bi bi-circle"></i>
-                          <p>Login</p>
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a href="./examples/register.html" class="nav-link">
-                          <i class="nav-icon bi bi-circle"></i>
-                          <p>Register</p>
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      <i class="nav-icon bi bi-box-arrow-in-right"></i>
-                      <p>
-                        Version 2
-                        <i class="nav-arrow bi bi-chevron-right"></i>
-                      </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                      <li class="nav-item">
-                        <a href="./examples/login-v2.html" class="nav-link">
-                          <i class="nav-icon bi bi-circle"></i>
-                          <p>Login</p>
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a href="./examples/register-v2.html" class="nav-link">
-                          <i class="nav-icon bi bi-circle"></i>
-                          <p>Register</p>
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="nav-item">
-                    <a href="./examples/lockscreen.html" class="nav-link">
-                      <i class="nav-icon bi bi-circle"></i>
-                      <p>Lockscreen</p>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-header">DOCUMENTATIONS</li>
-              <li class="nav-item">
-                <a href="./docs/introduction.html" class="nav-link">
-                  <i class="nav-icon bi bi-download"></i>
-                  <p>Installation</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./docs/layout.html" class="nav-link">
-                  <i class="nav-icon bi bi-grip-horizontal"></i>
-                  <p>Layout</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./docs/color-mode.html" class="nav-link">
-                  <i class="nav-icon bi bi-star-half"></i>
-                  <p>Color Mode</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon bi bi-ui-checks-grid"></i>
-                  <p>
-                    Components
-                    <i class="nav-arrow bi bi-chevron-right"></i>
-                  </p>
-                </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="./docs/components/main-header.html" class="nav-link">
-                      <i class="nav-icon bi bi-circle"></i>
-                      <p>Main Header</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="./docs/components/main-sidebar.html" class="nav-link">
-                      <i class="nav-icon bi bi-circle"></i>
-                      <p>Main Sidebar</p>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon bi bi-filetype-js"></i>
-                  <p>
-                    Javascript
-                    <i class="nav-arrow bi bi-chevron-right"></i>
-                  </p>
-                </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="./docs/javascript/treeview.html" class="nav-link">
-                      <i class="nav-icon bi bi-circle"></i>
-                      <p>Treeview</p>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a href="./docs/browser-support.html" class="nav-link">
-                  <i class="nav-icon bi bi-browser-edge"></i>
-                  <p>Browser Support</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./docs/how-to-contribute.html" class="nav-link">
-                  <i class="nav-icon bi bi-hand-thumbs-up-fill"></i>
-                  <p>How To Contribute</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./docs/faq.html" class="nav-link">
-                  <i class="nav-icon bi bi-question-circle-fill"></i>
-                  <p>FAQ</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./docs/license.html" class="nav-link">
-                  <i class="nav-icon bi bi-patch-check-fill"></i>
-                  <p>License</p>
-                </a>
-              </li>
-              <li class="nav-header">MULTI LEVEL EXAMPLE</li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon bi bi-circle-fill"></i>
-                  <p>Level 1</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon bi bi-circle-fill"></i>
-                  <p>
-                    Level 1
-                    <i class="nav-arrow bi bi-chevron-right"></i>
-                  </p>
-                </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      <i class="nav-icon bi bi-circle"></i>
-                      <p>Level 2</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      <i class="nav-icon bi bi-circle"></i>
-                      <p>
-                        Level 2
-                        <i class="nav-arrow bi bi-chevron-right"></i>
-                      </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                      <li class="nav-item">
-                        <a href="#" class="nav-link">
-                          <i class="nav-icon bi bi-record-circle-fill"></i>
-                          <p>Level 3</p>
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a href="#" class="nav-link">
-                          <i class="nav-icon bi bi-record-circle-fill"></i>
-                          <p>Level 3</p>
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a href="#" class="nav-link">
-                          <i class="nav-icon bi bi-record-circle-fill"></i>
-                          <p>Level 3</p>
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      <i class="nav-icon bi bi-circle"></i>
-                      <p>Level 2</p>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon bi bi-circle-fill"></i>
-                  <p>Level 1</p>
-                </a>
-              </li>
-              <li class="nav-header">LABELS</li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon bi bi-circle text-danger"></i>
-                  <p class="text">Important</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon bi bi-circle text-warning"></i>
-                  <p>Warning</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon bi bi-circle text-info"></i>
-                  <p>Informational</p>
-                </a>
-              </li>
-            </ul>
-            <!--end::Sidebar Menu-->
-          </nav>
-        </div>
+        <div id="sidebar"></div>
         <!--end::Sidebar Wrapper-->
       </aside>
       <!--end::Sidebar-->
@@ -943,13 +297,42 @@ tr:hover {
           <div class="container-fluid">
             <!--begin::Row-->
             <div class="row">
-              <div class="col-sm-6"><h3 class="mb-0"> <i class="fas fa-wrench"></i>   Maintenances Requests</h3></div>
-              <div class="col-sm-6">
-                <ol class="breadcrumb float-sm-end">
+              <div class="col-sm-8">
+
+                <h3 class="mb-0 contact_section_header">  <i class="fas fa-user icon"></i> Maintenance Requests</h3>
+
+
+                    <div class="row mt-2  ">
+                      <div class="col-md-12  ">
+
+
+
+                        <div class="row mt-6" >
+                          <!-- Summary -->
+                          <div class="col-md-3  ">
+                            <label class="text text-center"> <i class="fas fa-calculator"></i> <a href="index.html"> TOTAL</a>  </label>
+                              <span class="value text-center"> <b>60 </b> </span>
+                          </div>
+
+                          <div class="col-md-3">
+                            <label class="text text-center"> <i class="fas fa-spinner fa-spin icon"></i> <a href=""> In Progress </a>  </label>
+                            <span class="value"> 89 </span>
+                          </div>
+
+                        </div>
+
+                      </div>
+
+                </div>
+              </div>
+
+              <div class="col-sm-4">
+                <!-- <ol class="breadcrumb float-sm-end">
                   <li class="breadcrumb-item"><a href="#" style="color: #00192D;">  <i class="bi bi-house"></i> Home</a></li>
                   <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
-                </ol>
+                </ol> -->
               </div>
+
             </div>
             <!--end::Row-->
           </div>
@@ -959,42 +342,22 @@ tr:hover {
           <!--begin::Container-->
           <div class="container-fluid">
             <!-- Info boxes -->
-            <div class="row">
 
-                <div class="col-md-6">
-                    <div class="profile_details">
-                        <div class="profile_picture">
-                                         <!-- <img class="mt-3" src="images/mansion-1.jpg" alt="Profile Picture"  width="100" height="100"> -->
-                        </div>
-                        <div class="profile_info">
-                                    
-                                            <!-- <h2>Jane Doe</h2> -->
-                                             
-                            <div class="profile_details one">
-                              <p> New: <strong>&nbsp;50|</strong> In Progress: <strong> &nbsp;30|</strong> Completed: <strong> &nbsp;70</strong> </p>
-
-                            
-                            </div>
-                                
-                        </div>
-                    </div>
-                                    
-                </div>
-                <div class="col-md-6">
-                  <div style="display: flex; justify-content: end;">
-                  <button class="btn" style="background-color: #00192D; color: white; font-size: small;"> <i class="fas fa-tools icon"></i> 
-                    <b> Vendors </b></button>     
-                </div>
-
-                
-                
-
-
-              <!-- /.col -->
-            </div>
             <!-- /.row -->
             <!--begin::Row-->
-            
+            <div class="row first mb-2 mt-2 rounded-circle">
+
+              <div class="col-md-12 d-flex justify-content-end">
+                <div>
+
+                  <button  id="Service_Provider_btn"  class="btn new_text">   <i class="bi bi-chat"></i> <b> <a href="../serviceProvider/providerProfiles.html"> Service_Providers</a> </b> </button>
+
+                </div>
+
+
+              </div>
+              <!-- /.col -->
+            </div>
             <!--end::Row-->
             <!--begin::Row-->
             <div class="row">
@@ -1002,23 +365,8 @@ tr:hover {
               <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                      <div class="filter-container" id="filter-container">
 
-                        <div class="filter" id="filter">
-                          <i class="bi bi-filter"></i>
-                          Filter | <b>All Properties <i class="fas fa-chevron-down"></i> </b>
-  
-                        </div>
-                        <div class="panel" id="panel">
-                          <a href="#">All Properties</a>
-                          <a href="#">Crown Z</a>
-                          <a href="#">Manucho</a>
-                          <a href="#">MM Towers</a>
 
-                        </div>
-
-                      </div>
-                          
                     </div>
 
                     <div class="card-body">
@@ -1031,10 +379,11 @@ tr:hover {
                             <th>UNIT</th>
                             <th>DATE</th>
                             <th>ISSUE</th>
+                            <th>Payment Status</th>
                             <th>Prority</th>
                             <th>PROVIDER</th>
-                             <th>ACTION</th> 
-          
+                             <th>ACTION</th>
+
                           </tr>
                         </thead>
                         <tbody>
@@ -1045,19 +394,25 @@ tr:hover {
                             <td>A12</td>
                             <td>11-10-2025</td>
                             <td>Broken handle</td>
+                            <td><button class="btn  mt-0" id="example" data-bs-toggle="modal" data-bs-target="#leaseModal" style="color: #FFC107;">
+                           PAY</button></td>
+                            <!-- <td><button onclick="toggleOverlay()">Paid</button></td> -->
                             <td>low</td>
-                            
+
                             <td>Not assigned</td>
                             <td id="more">
-                             <div id="more_icon">&#x2026;</div> 
+                             <div id="more_icon">&#x2026;</div>
                              <br>
                              <div id="more_options">
-                                <a href="#">Assign</a>
+                              <a href="#" class="mt-0" id="example" data-bs-toggle="modal" data-bs-target="#leaseyModal" style="color: #FFC107;"class="btn  mt-0" id="example" data-bs-toggle="modal" data-bs-target="#leaseyModal" style="color: #FFC107;">
+                              Assign
+                              </a>
+                                <!-- <a href="#">Assign</a> -->
                                 <a href="#">Update</a>
                                 <a href="#">Delete</a>
                                 <a href="#">View</a>
-                              
-                                
+
+
                              </div>
                             </td>
                           </tr>
@@ -1068,16 +423,17 @@ tr:hover {
                             <td>A11</td>
                             <td>12-11-2025</td>
                             <td>Leaking roof</td>
+                            <td><button  class="btn  mt-0" id="example" style="color: #FFC107;">PAID</button></td>
                             <td>high</td>
-                            
+
                             <td>New Electrics</td>
                             <td id="more">
-                              <div id="more_icon" class="rounded-circle" >&#x2026;</div> 
+                              <div id="more_icon" class="rounded-circle" >&#x2026;</div>
                               </td>
                           </tr>
                           <!-- Add more rows as needed -->
                         </tbody>
-              
+
                     </table>
 
 
@@ -1087,7 +443,7 @@ tr:hover {
 
 
                     <div class="card-footer">
-                        
+
                      </div>
 
                 </div>
@@ -1140,19 +496,19 @@ tr:hover {
    <div class="card-header view_announcement bg-secondary text-white">
        <h5 class="mb-0">Rent Payments</h5>
        <div id="close-overlay-btn" class="close-btn" > <b> &times;</b> </div>
-       
+
    </div>
    <div class="card-body">
        <p class="card-text">
-           All Rent Payments should be made before 24/01/17. Anyone who feels that they might not 
+           All Rent Payments should be made before 24/01/17. Anyone who feels that they might not
            be able to complete their dues on 24/01/17 should communicate to management before the due date.
            Else, you face an eviction risk if you fail to pay your dues before the said date without a reasonable reason</p>
-          
+
            <p class="timestamp" id="timestamp"></p> <!-- Timestamp -->
 
- 
+
        <div class="Recipients border-top border-gray "> <p><strong>Recipients|</strong> All Employees</p>  </div>
-       
+
    </div>
    <div class="card-footer view_announcement d-flex">
        <button class="btn btn-danger btn-sm">Delete</button>
@@ -1160,6 +516,122 @@ tr:hover {
    </div>
  </div>
  </div>
+
+  <!-- Lease Modal -->
+<div class="modal fadey" id="leaseyModal" tabindex="-1" aria-labelledby="leaseyModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="leaseyModalLabel"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="form-wrapper">
+              <h1 class="text-warning">Assign Task</h1>
+              <form id="taskForm">
+                <div class="input-group">
+                  <label for="taskName">Task About To Be Assigned:</label>
+                  <input type="text" id="taskName" name="taskName" placeholder="Enter task name" style="border-radius: 10px; width: 100%;"   required>
+              </div>
+
+                  <div class="input-group">
+                      <label for="serviceProvider">Select A Category For The Task</label>
+                  <label for="taskName"></label>
+                      <select id="serviceProvider" name="serviceProvider" style="border-radius: 10px;"  required>
+                          <option value="" id="taskName" disabled selected>Select A Category </option>
+                          <option value="John">Electrical</option>
+                          <option value="Jane">Plumbing</option>
+                          <option value="Mike">Cleaning</option>
+                      </select>
+                  </div>
+                  <div class="input-group">
+                    <label for="serviceProvider">Select Service Provider:</label>
+                    <select id="serviceProvider" name="serviceProvider" style="border-radius: 10px;" required>
+                        <option value="" id="taskName"  disabled selected>Select Provider</option>
+                        <option value="John">John </option>
+                        <option value="Jane">Jane </option>
+                        <option value="Mike">Mike </option>
+                    </select>
+                </div>
+
+
+                  <button type="submit" class="submit-btn" style="border-radius: 10px; background-color: #00192D; width: 50%; margin-left: 6rem;" >Assign</button>
+              </form>
+          </div>
+
+          <!-- <div id="assignedTasks">
+              <h2>Assigned Tasks</h2>
+              <ul id="taskList"></ul>
+          </div> -->
+      </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Lease Modal -->
+  <div class="modal fade" id="leaseModal" tabindex="-1" aria-labelledby="leaseModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="leaseModalLabel"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form class="beasy">
+             <!-- Landlord Information Section -->
+      <!-- Service Provider Information Section -->
+      <div class="form-section">
+        <h3 class="text-warning">Landlord Information</h3>
+         <a href="#"><p>Martin White</p></a>
+        <!-- <label for="landlordName">Landlord Name(Martin White)</label> -->
+        <!-- <input type="text" id="landlordName" name="landlordName" placeholder="Enter your full name" required> -->
+
+        <h3 class="text-warning">Select Service Providers Information</h3>
+        <label for="paymentMethod">Choose:</label>
+        <select id="paymentMethod" name="paymentMethod" required>
+          <option value="bank_transfer">ABX Electricals</option>
+          <option value="bank_transfer">Sunsine Plumbers</option>
+          <option value="bank_transfer">Favored Technologies</option>
+        </select>
+        <h3 class="text-warning">Payment Details</h3>
+        <label for="amount">Payment Amount (KSH)</label>
+        <input type="text" id="landlordName" name="landlordName" placeholder="Enter Amount" required>
+
+        <label for="paymentMethod">Payment Method</label>
+        <select id="paymentMethod" name="paymentMethod" required>
+          <option value="mpesa_transfer" class="bossy">MPESA</option>
+          <option value="mpesa_transfer" class="bossy">Bank</option>
+          <option value="mpesa_transfer" class="bossy">Global Pay</option>
+          <option value="mpesa_transfer" class="bossy">Cash</option>
+
+        </select>
+         <!-- Submit Button -->
+         <button type="submit" class="bossy"> MAKE PAYMENT</button>
+      </div>
+
+
+
+      <!-- Payment Details Section
+      <div class="form-section">
+        <h3>Payment Details</h3>
+        <label for="amount">Payment Amount (KSH)</label>
+        <input type="number" id="amount" name="amount" placeholder="Enter the amount to pay" min="1" required>
+
+        <label for="paymentMethod">Payment Method</label>
+        <select id="paymentMethod" name="paymentMethod" required>
+          <option value="mpesa_transfer" class="bossy">MPESA</option>
+        </select>
+      </div> -->
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
 <!-- End view announcement -->
 <!-- end overlay card. -->
@@ -1181,7 +653,7 @@ tr:hover {
 
   more_announcement.addEventListener('click', ()=>{
 
-     view_announcement.style.display= "flex";  
+     view_announcement.style.display= "flex";
      document.querySelector('.app-wrapper').style.opacity = '0.3'; // Reduce opacity of main content
      const now = new Date();
             const formattedTime = now.toLocaleString(); // Format the date and time
@@ -1201,6 +673,19 @@ tr:hover {
 
  <!-- End view announcement script -->
 
+ <script>
+  // Function to toggle the visibility of the overlay
+  function toggleOverlay() {
+    var overlay = document.getElementById('overlay');
+    // If overlay is hidden, show it
+    if (overlay.style.display === "none" || overlay.style.display === "") {
+      overlay.style.display = "flex";
+    } else {
+      overlay.style.display = "none";
+    }
+  }
+</script>
+
 
     <script
       src="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.10.1/browser/overlayscrollbars.browser.es6.min.js"
@@ -1214,28 +699,7 @@ tr:hover {
       crossorigin="anonymous"
     ></script>
     <!--end::Required Plugin(popperjs for Bootstrap 5)--><!--begin::Required Plugin(Bootstrap 5)-->
-    
-<!-- script for occordion -->
-<script>
 
-        // JavaScript to handle hover and hide functionality
-        const filterContainer = document.getElementById("filter-container");
-        const accordion = document.getElementById("filter");
-        const panel = document.getElementById("panel");
-
-        // Show panel when hovering over the accordion
-        accordion.addEventListener("mouseenter", () => {
-            panel.style.display = "block";
-        });
-
-        // Hide panel when moving out of both accordion and panel
-         filterContainer.addEventListener("mouseleave", () => {
-             panel.style.display = "none";
-      });
-  
-
-</script>
-<!-- End for Occordion script -->
 
 
 <!-- more options -->
@@ -1260,7 +724,7 @@ tr:hover {
 </script>
     <!-- Begin script for datatable -->
     <script>
-        
+
        $(document).ready(function() {
         $('#maintenance').DataTable({
             "paging": true,
@@ -1278,14 +742,27 @@ tr:hover {
 
     </script>
     <!-- End script for data_table -->
-    
+
+<!--Begin sidebar script -->
+<script>
+  fetch('../bars/sidebar.html')  // Fetch the file
+      .then(response => response.text()) // Convert it to text
+      .then(data => {
+          document.getElementById('sidebar').innerHTML = data; // Insert it
+      })
+      .catch(error => console.error('Error loading the file:', error)); // Handle errors
+</script>
+<!-- end sidebar script -->
+
+
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
       integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
       crossorigin="anonymous"
     ></script>
     <!--end::Required Plugin(Bootstrap 5)--><!--begin::Required Plugin(AdminLTE)-->
-    <script src="../../dist/js/adminlte.js"></script>
+    <script src="../../../dist/js/adminlte.js"></script>
     <!--end::Required Plugin(AdminLTE)--><!--begin::OverlayScrollbars Configure-->
     <script>
       const SELECTOR_SIDEBAR_WRAPPER = '.sidebar-wrapper';
@@ -1464,6 +941,7 @@ tr:hover {
       // - END PIE CHART -
       //-----------------
     </script>
+
     <!--end::Script-->
   </body>
   <!--end::Body-->

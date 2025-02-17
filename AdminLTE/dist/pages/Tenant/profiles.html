@@ -43,7 +43,7 @@
     <!--end::Third Party Plugin(Bootstrap Icons)-->
     <!--begin::Required Plugin(AdminLTE)-->
     <link rel="stylesheet" href="../../../dist/css/adminlte.css" />
-    <!-- <link rel="stylesheet" href="text.css" /> -->
+    <link rel="stylesheet" href="serviceProviderProfile.css" />
     <!--end::Required Plugin(AdminLTE)-->
     <!-- apexcharts -->
     <link
@@ -53,20 +53,15 @@
       crossorigin="anonymous"
     />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 
-
+    <link rel="stylesheet" href="profiles.css">
 
 <!-- scripts for data_table -->
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
-<link rel="stylesheet" href="announcements.css">
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-
-
-
-
 
   </head>
   <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
@@ -225,7 +220,7 @@
             <li class="nav-item dropdown user-menu">
               <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                 <img
-                  src="17.jpg"
+                  src="../17.jpg"
                   class="user-image rounded-circle shadow"
                   alt="User Image"
                 />
@@ -304,27 +299,30 @@
           <div class="container-fluid">
             <!--begin::Row-->
             <div class="row">
-              <div class="col-sm-8">
+              <div class="col-sm-8 ">
 
-                <h3 class="mb-0 contact_section_header">  <i class="fas fa-bullhorn"></i> Announcements</h3>
+                <h3 class="mb-0 contact_section_header">  <i class="fas fa-user icon"></i> Tenants</h3>
 
 
                     <div class="row mt-2  ">
-                      <div class="col-md-12  Summary">
+                      <div class="col-md-12 Summary ">
+
 
 
                         <div class="row mt-6" >
                           <!-- Summary -->
-                          <div class="col-md-4  ">
-                            <label class="text text-center"> <i class="fas fa-bullhorn"></i>  <a href="index.html"> Announcements_send</a>  </label>
-                              <span class="value text-center"> <b>60000 </b> </span>
+                          <div class="col-md-3  ">
+                            <label class="text text-center">  <i class="fas fa-calculator"></i> <a href="#"> TOTAL</a>  </label>
+                              <span class="value text-center">60000 </span>
                           </div>
 
-                          <div class="col-md-4">
-                            <label class="text text-center"><i class="fas fa-clock"></i> <a href=""> Duration </a>  </label>
-                            <span class="value"> 1st Jan - 1nd Feb </span>
+                          <div class="col-md-3">
+                            <label class="text text-center"> <i class="fas fa-plus-circle"></i><a href=""> NEW_REQUESTS </a>  </label>
+                            <span class="value"> 30 </span>
                           </div>
-
+                          <div class="col-md-3">
+                            <button class="btn text text-danger"><i class="bi bi-trash"></i> </i> DELETE_ALL_MESSAGES</button>
+                          </div>
                         </div>
 
                       </div>
@@ -332,112 +330,142 @@
                 </div>
               </div>
 
-              <div class="col-sm-4">
-                <!-- <ol class="breadcrumb float-sm-end">
-                  <li class="breadcrumb-item"><a href="#" style="color: #00192D;">  <i class="bi bi-house"></i> Home</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
-                </ol> -->
-              </div>
+              <!-- <div class="col-sm-4">
+                <ol class="breadcrumb float-sm-end">
+                  <li class="breadcrumb-item"><a href="#" style="color: #00192D;">  <i class="bi bi-house"></i> </a></li>
+                  <li class="breadcrumb-item active" aria-current="page"></li>
+                </ol>
+              </div> -->
 
             </div>
             <!--end::Row-->
           </div>
           <!--end::Container-->
         </div>
+
         <div class="app-content">
           <!--begin::Container-->
           <div class="container-fluid">
             <!-- Info boxes -->
             <div class="row first mb-2 mt-2 rounded-circle">
 
-              <div class="col-md-12 d-flex justify-content-end">
+                <div class="col-md-12 d-flex justify-content-end">
 
+                    <button id="add_provider_btn" class="btn me-3 " style="background-color: #00192D; color: white; font-size: small;">  <i class="bi bi-plus"></i>
+                      <b class="button_item" class="open-btn" onclick="openPopup()"> Add Tenant </b></button>
 
+                    <button id="add_provider_btn" class="btn" style="background-color: #00192D; color: white; font-size: small;">  <i class="bi bi-bell"></i>
+                    <b class="button_item" class="open-btn" onclick="opennotificationPopup()"> Create_Notification </b></button>
 
-                  <button id="add_provider_btn" class="btn" style="background-color: #00192D; color: white; font-size: small;">   <i class="fa fa-bullhorn"></i>
-                  <b class="button_item" class="open-btn" onclick="opennotificationPopup()"> New_Announcement</b></button>
-
-              </div>
+                </div>
               <!-- /.col -->
             </div>
-        <!-- /.row -->
-
-
-
+            <!-- /.row -->
+            <!--begin::Row-->
 
             <!--end::Row-->
             <!--begin::Row-->
-            <div class="row">
+            <div class="row second">
               <!-- Start col -->
-              <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
+              <div class="col-md-12 " >
+                    <div class="card second_col ">
+                        <div class="card-header">
 
-                    </div>
 
-                    <div class="card-body">
-                        <table id="Texts"  class="display" >
-                          <thead>
-                            <tr>
-                                <th scope="col" >Message ID</th>
-                                <th>Date</th>
-                                <th>Title</th>
-                                <th>Message</th>
-                                <th>Recepient</th>
-                                <th>Status</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr >
-                                <td scope="row" >13</td>
-                                <td>1/78/2019</td>
-                                <td>Rent Payments</td>
-                                <td>All Rent Payments...</td>
-                                <td>Crown Z, Manucho.. </td>
-                                <td>Draft</td>
-                                <td class="action" id="more_announcement_btn"> More&#x2026; </td>
-                            </tr>
-                            <tr>
-                                <td scope="row" >13</td>
-                                <td>1/78/2019</td>
-                                <td>Rent Payments</td>
-                                <td>All Rent Payments...</td>
-                                <td>Crown Z, Manucho.. </td>
-                                <td>Send</td>
-                                <td class="action" id="more_announcement_btn"> More&#x2026; </td>
-                            </tr>
-                            <tr>
-                                <td scope="row" >13</td>
-                                <td>1/78/2019</td>
-                                <td>Rent Payments</td>
-                                <td>All Rent Payments...</td>
-                                <td>Crown Z, Manucho.. </td>
-                                <td>Draft</td>
-                                <td class="action" id="more_announcement_btn"> More&#x2026; </td>
-                            </tr>
-                            <tr>
-                                <td scope="row" >13</td>
-                                <td>1/78/2019</td>
-                                <td>Rent Payments</td>
-                                <td>All Rent Payments...</td>
-                                <td>Crown Z, Manucho.. </td>
-                                <td>Send</td>
-                                <td class="action" id="more_announcement_btn"> More&#x2026; </td>
-                            </tr>
-                        </tbody>
+                        </div>
+
+                        <div class="card-body">
+                          <table id="tenants"  class="table table-striped table-bordered">
+                            <thead>
+                                <tr  >
+                                    <th scope="col">OCCUPIED</th>
+                                        <th scope="col">NAME</th>
+                                        <th scope="col">PHONE</th>
+                                        <th scope="col">TYPE</th>
+                                        <th scope="col">Property</th>
+                                        <th scope="col">UNIT</th>
+                                    <th scope="col">ACTION</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr onclick="window.location.href='individualprofile.html'" >
+                                    <th scope="row">1/7/11</th>
+                                        <td>Kelvin Mbugua</td>
+                                        <td>0757414722</td>
+                                        <td> LEASE</td>
+                                        <td> CROWN Z</td>
+                                        <td>E456</td>
+                                        <td> <button type="button" class="btn text-warning">View...</button>
+                                        </td>
+                                </tr>
+                                <tr onclick="window.location.href='profile.html'">
+                                <th scope="row">2/7/11</th>
+                                <td>Jacob Wesonga</td>
+                                <td>0758322543</td>
+                                <td>REQULAR</td>
+                                <td>EBENEZER</td>
+                                <td>E537</td>
+
+                                <td> <button type="button" class="btn text-warning">View..</button>
+
+                                </tr>
+                                <tr onclick="window.location.href='individualprofile.html'" >
+                                    <th scope="row">3/7/11</th>
+                                <td>Larry Madowo</td>
+                                <td>0758322543</td>
+                                <td>LEASE</td>
+                                <td>MANUCHO</td>
+                                <td>F10</td>
+
+                                <td> <button type="button" class="btn text-warning">View...</button>
+
+                                    </tr>
+
+                                    <tr onclick="window.location.href='individualprofile.html'" >
+                                      <th scope="row">3/7/11</th>
+                                  <td>Larry Madowo</td>
+                                  <td>0758322543</td>
+                                  <td>LEASE</td>
+                                  <td>MANUCHO</td>
+                                  <td>F10</td>
+
+                                  <td> <button type="button" class="btn text-warning">View...</button>
+
+                                      </tr>
+
+                                      <tr onclick="window.location.href='individualprofile.html'" >
+                                        <th scope="row">3/7/11</th>
+                                    <td>Larry Madowo</td>
+                                    <td>0758322543</td>
+                                    <td>LEASE</td>
+                                    <td>MANUCHO</td>
+                                    <td>F10</td>
+                                    <td> <button type="button" class="btn text-warning">View...</button>
+
+                                        </tr>
+                                        <tr onclick="window.location.href='profile.html'" >
+                                          <th scope="row">3/7/11</th>
+                                      <td>Larry Madowo</td>
+                                      <td>0758322543</td>
+                                      <td>LEASE</td>
+                                      <td>MANUCHO</td>
+                                      <td>F10</td>
+                                      <td> <button type="button" class="btn text-warning">View...</button>
+                                          </tr>
+                            </tbody>
                         </table>
 
 
 
+                        </div>
+
+
+
+                        <div class="card-footer">
+
+                        </div>
+
                     </div>
-
-
-
-                    <div class="card-footer">
-
-                     </div>
-
                 </div>
 
 
@@ -476,7 +504,7 @@
 
 <!-- Overlay Cards -->
 
-
+<!-- create Announcement -->
 
 
 
@@ -485,15 +513,13 @@
  <!-- Start View announcement -->
  <div class="view_announcement" id="view_announcement">
   <div class="card content">
-   <div class="card-header view_announcement header">
+   <div class="card-header view_announcement bg-secondary text-white">
        <h5 class="mb-0">Rent Payments</h5>
        <div id="close-overlay-btn" class="close-btn" > <b> &times;</b> </div>
 
    </div>
    <div class="card-body">
        <p class="card-text">
-           All Rent Payments should be made before 24/01/17. Anyone who feels that they might not
-       <p class="card-text announcement">
            All Rent Payments should be made before 24/01/17. Anyone who feels that they might not
            be able to complete their dues on 24/01/17 should communicate to management before the due date.
            Else, you face an eviction risk if you fail to pay your dues before the said date without a reasonable reason</p>
@@ -506,69 +532,55 @@
    </div>
    <div class="card-footer view_announcement d-flex">
        <button class="btn btn-danger btn-sm">Delete</button>
-       <button class="btn resend btn-sm">Resend</button>
+       <button class="btn btn-secondary btn-sm">Resend</button>
    </div>
  </div>
  </div>
 
 <!-- End view announcement -->
 
-<!-- Start of new announcement card-->
-<div class="container-fluid New_Announcement mt-5" id="New_Announcement">
-  <div class="card New_Announcement">
-      <div class="card-header text-white" style="background-color: #00192D; display: flex;">
-          <h5 class="mb-0">New Announcement</h5>
-         <div id="close-new_announcement-btn" class="close-btnOne" > <b> &times;</b> </div>
-      </div>
-      <div class="card-body">
-          <!-- Title -->
-          <div class="mb-3">
-              <label for="announcementTitle" class="form-label">Title</label>
-              <input type="text" class="form-control" id="announcementTitle" placeholder="Enter title">
-          </div>
+<!-- Complaint part -->
+
+<div class="popup-overlay" id="complaintPopup">
+  <div class="popup-content">
+    <button class="close-btn text-secondary" onclick="closePopup()">×</button>
+    <h2 style="color: #00192D;">Add Tenant</h2>
+    <form class="complaint-form">
+        <label for="name">Tenant Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
 
 
-
-          <!-- Message -->
-          <div class="mb-3">
-              <label for="announcementMessage" class="form-label">Message</label>
-              <textarea class="form-control" id="announcementMessage" rows="5" placeholder="Write your message here"></textarea>
-          </div>
-
-          <!-- Recipients -->
-
-            <div class="mb-3 recipients-container" id="recipients-container">
-              <label for="recipientsSelect" class="form-label">Recipients</label>  <i class="fas fa-chevron-down"></i>
-              <div class="panel " >
-
-              <select class="form-select bg-dark text-white" id="recipientsSelect" multiple>
-                  <option value="all">All Employees</option>
-                  <option value="managers">Managers</option>
-                  <option value="tenants">Tenants</option>
-                  <option value="staff">Staff</option>
-              </select>
-
-            </div>
-          </div>
+        <label for="property">Property:</label>
+        <select id="property" required>
+          <option value="">Select Property</option>
+          <option value="High">Manucho</option>
+          <option value="Moderate">Ben 10</option>
+          <option value="Low">Alpha</option>
+        </select>
 
 
-      </div>
-      <div class="card-footer d-flex justify-content-end">
-          <button type="button" class="btn btn-secondary me-2" id="saveDraftBtn">Add to Draft</button>
-          <button type="button"  class="btn" style="background-color: #FFC107; color: white;" id="sendAnnouncementBtn">Send</button>
-      </div>
+        <label for="unit">Rental Unit:</label>
+        <input type="text" id="unit" name="unit" required>
+
+
+      <button type="submit" class="submit-btn" style="background-color: #00192D; color: #f1f1f1;">SUBMIT</button>
+    </form>
   </div>
 </div>
-<!-- end of new announcement card-->
-
-
+<!-- End add tenant part -->
 
 
 <!-- notification popup -->
 <div class="notificationpopup-overlay" id="notificationPopup">
   <div class="notificationpopup-content">
     <button class="close-btn text-secondary" onclick="closenotificationPopup()">×</button>
-    <h2 style="color: #00192D;">Announcement</h2>
+    <h2 style="color: #00192D;">Notification</h2>
 
     <label for="property">Recepients:</label>
     <select id="property" required>
@@ -583,10 +595,8 @@
       <button type="submit" class="submit-btn" style="background-color: #00192D; color: #f1f1f1;">SEND</button>
   </div>
 </div>
-
-<script src="announcements.js"></script>
-
 <!-- End Notification popup -->
+
 
 <!-- end overlay card. -->
 
@@ -600,11 +610,48 @@
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 
+ <script>
+  const   more_announcement = document.getElementById('more_announcement_btn');
+  const   view_announcement = document.getElementById('view_announcement');
+  const   close_overlay = document.getElementById("close-overlay-btn");
+
+  more_announcement.addEventListener('click', ()=>{
+
+     view_announcement.style.display= "flex";
+     document.querySelector('.app-wrapper').style.opacity = '0.3'; // Reduce opacity of main content
+     const now = new Date();
+            const formattedTime = now.toLocaleString(); // Format the date and time
+            timestamp.textContent = `Sent on: ${formattedTime}`;
 
 
- <!-- sidebar dropdowns-->
+  });
+
+     close_overlay.addEventListener('click', ()=>{
+
+     view_announcement.style.display= "none";
+     document.querySelector('.app-wrapper').style.opacity = '1';
 
 
+     });
+ </script>
+
+ <!-- End view announcement script -->
+
+<!-- Complain script -->
+<!-- Complaint script -->
+<script>
+  // Function to open the complaint popup
+  function openPopup() {
+    document.getElementById("complaintPopup").style.display = "flex";
+  }
+
+  // Function to close the complaint popup
+  function closePopup() {
+    document.getElementById("complaintPopup").style.display = "none";
+  }
+</script>
+<!-- End add new script -->
+<!-- End add new script -->
 
 
 <!-- create notification -->
@@ -619,6 +666,11 @@
     document.getElementById("notificationPopup").style.display = "none";
   }
 </script>
+
+<!-- create notification -->
+
+
+
 
     <script
       src="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.10.1/browser/overlayscrollbars.browser.es6.min.js"
@@ -655,20 +707,81 @@
 </script>
 <!-- End for Occordion script -->
 
+<!-- script for popups  -->
+
+
+<script>
+
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".nav-item > .nav-link").forEach((navLink) => {
+      navLink.addEventListener("click", function (e) {
+        // Check if the link has a submenu (dropdown)
+        let dropdown = this.nextElementSibling;
+        if (dropdown && dropdown.classList.contains("nav-treeview")) {
+          e.preventDefault(); // Prevents "#" from appearing in the URL
+          dropdown.classList.toggle("show"); // Toggles dropdown visibility
+        }
+      });
+    });
+  });
+
+
+     </script>
+
+<!-- more options -->
+<script>
+
+  // JavaScript to handle hover and hide functionality
+  const  more= document.getElementById("more");
+  const more_icon = document.getElementById("more_icon");
+  const more_options = document.getElementById("more_options");
+
+  // Show panel when hovering over the accordion
+  more_icon.addEventListener("mouseenter", () => {
+    more_options.style.display = "block";
+  });
+
+  // Hide panel when moving out of both accordion and panel
+   more.addEventListener("mouseleave", () => {
+    more_options.style.display = "none";
+});
+
+
+</script>
     <!-- Begin script for datatable -->
     <script>
+
        $(document).ready(function() {
-        $('#Texts').DataTable({
+        $('#tenants').DataTable({
             "paging": true,
             "searching": true,
             "info": true,
-            "lengthMenu": [5, 10, 25, 50],
+            "lengthMenu": [5, 10, 25, 60],
             "language": {
                 "search": "Filter records:",
                 "lengthMenu": "Show _MENU_ entries"
             }
         });
     });
+
+    </script>
+            <script>
+
+                $(document).ready(function() {
+                $('#vendor_distribution1').DataTable({
+                    // "paging": true,
+                    // "searching": true,
+                    // "info": true,
+                    // "lengthMenu": [5, 10, 25, 60],
+                    // "language": {
+                    //     "search": "Filter records:",
+                    //     "lengthMenu": "Show _MENU_ entries"
+                    // }
+                });
+            });
+
+            </script>
+
 
     </script>
     <!-- End script for data_table -->
@@ -683,6 +796,7 @@
       .catch(error => console.error('Error loading the file:', error)); // Handle errors
 </script>
 <!-- end sidebar script -->
+
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
@@ -712,35 +826,21 @@
         }
       });
     </script>
-
-
-<script>
-
-  document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll(".nav-item > .nav-link").forEach((navLink) => {
-      navLink.addEventListener("click", function (e) {
-        // Check if the link has a submenu (dropdown)
-        let dropdown = this.nextElementSibling;
-        if (dropdown && dropdown.classList.contains("nav-treeview")) {
-          e.preventDefault(); // Prevents "#" from appearing in the URL
-          dropdown.classList.toggle("show"); // Toggles dropdown visibility
-        }
-      });
-    });
-  });
-
-
-     </script>
-
     <!--end::OverlayScrollbars Configure-->
     <!-- OPTIONAL SCRIPTS -->
     <!-- apexcharts -->
+   
+
     <script
       src="https://cdn.jsdelivr.net/npm/apexcharts@3.37.1/dist/apexcharts.min.js"
       integrity="sha256-+vh8GkaU7C9/wbSLIcwq82tQ2wTf44aOHA8HlBMwRI8="
       crossorigin="anonymous"
     ></script>
+
+
     <script>
+
+
       // NOTICE!! DO NOT USE ANY OF THIS JAVASCRIPT
       // IT'S ALL JUST JUNK FOR DEMO
       // ++++++++++++++++++++++++++++++++++++++++++

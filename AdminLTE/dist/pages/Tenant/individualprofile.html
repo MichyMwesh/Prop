@@ -43,7 +43,6 @@
     <!--end::Third Party Plugin(Bootstrap Icons)-->
     <!--begin::Required Plugin(AdminLTE)-->
     <link rel="stylesheet" href="../../../dist/css/adminlte.css" />
-    <!-- <link rel="stylesheet" href="text.css" /> -->
     <!--end::Required Plugin(AdminLTE)-->
     <!-- apexcharts -->
     <link
@@ -52,21 +51,87 @@
       integrity="sha256-4MX+61mt9NVvvuPjUWdUdyfZfxSB1/Rf9WtqRHgG5S0="
       crossorigin="anonymous"
     />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-
-
-
-<!-- scripts for data_table -->
-<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
-<link rel="stylesheet" href="announcements.css">
-
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="individualprofile.css">
 
 
+    <!-- scripts for data_table -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="announcements.css">
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+
+<style>
+   .overlay {
+            /* position: absolute; */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            display: none;
+            justify-content: center;
+            align-items: center;
+            /* z-index: 1000; */
+    }
+
+    /* Overlay content */
+    .overlay-content {
+      background-color: #fff;
+            padding: 30px;
+            /* border-radius: 8px; */
+            width: 50%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            text-align: center;
+  /* background-color: white; */
+  /* padding: 30px; */
+  border-radius: 10px;
+    }
+
+     /* Close button
+  .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+  border: none;
+  background: none;
+  } */
+    table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .total-row {
+            font-weight: bold;
+        }
+        .downloadi {
+          padding: 15px 30px; /* Add padding to the button */
+  font-size: 16px; /* Optional: adjust font size */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  border-radius: 10px;
+  border: none;
+}
 
 
+</style>
 
   </head>
   <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
@@ -108,7 +173,7 @@
                   <div class="d-flex">
                     <div class="flex-shrink-0">
                       <img
-                        src="../../dist/assets/img/user1-128x128.jpg"
+                        src="../../../dist/assets/img/user1-128x128.jpg"
                         alt="User Avatar"
                         class="img-size-50 rounded-circle me-3"
                       />
@@ -134,7 +199,7 @@
                   <div class="d-flex">
                     <div class="flex-shrink-0">
                       <img
-                        src="../../dist/assets/img/user8-128x128.jpg"
+                        src="../../../dist/assets/img/user8-128x128.jpg"
                         alt="User Avatar"
                         class="img-size-50 rounded-circle me-3"
                       />
@@ -160,7 +225,7 @@
                   <div class="d-flex">
                     <div class="flex-shrink-0">
                       <img
-                        src="../../dist/assets/img/user3-128x128.jpg"
+                        src="../../../dist/assets/img/user3-128x128.jpg"
                         alt="User Avatar"
                         class="img-size-50 rounded-circle me-3"
                       />
@@ -225,17 +290,17 @@
             <li class="nav-item dropdown user-menu">
               <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                 <img
-                  src="17.jpg"
+                  src="../../../dist/assets/img/user2-160x160.jpg"
                   class="user-image rounded-circle shadow"
                   alt="User Image"
                 />
-                <span class="d-none d-md-inline">  <b>JENGO PAY</b>  </span>
+                <span class="d-none d-md-inline">Alexander Pierce</span>
               </a>
               <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
                 <!--begin::User Image-->
                 <li class="user-header text-bg-primary">
                   <img
-                    src="../../dist/assets/img/user2-160x160.jpg"
+                    src="../../../dist/assets/img/user2-160x160.jpg"
                     class="rounded-circle shadow"
                     alt="User Image"
                   />
@@ -291,9 +356,11 @@
           <!--end::Brand Link-->
         </div>
         <!--end::Sidebar Brand-->
+
         <!--begin::Sidebar Wrapper-->
         <div id="sidebar"></div> <!-- This is where the sidebar is inserted -->
         <!--end::Sidebar Wrapper-->
+
       </aside>
       <!--end::Sidebar-->
       <!--begin::App Main-->
@@ -304,321 +371,484 @@
           <div class="container-fluid">
             <!--begin::Row-->
             <div class="row">
+              <div class="col-sm-6"><h3 class="mb-0"></h3></div>
+              <div class="col-sm-6">
+
+              </div>
+            </div>
+            <!--end::Row-->
+          </div>
+          <!--end::Container-->
+        </div>
+        <div  class="app-content">
+
+          <div class="container-fluid">
+            <!-- First Row -->
+            <div class="row  " >
               <div class="col-sm-8">
 
-                <h3 class="mb-0 contact_section_header">  <i class="fas fa-bullhorn"></i> Announcements</h3>
+                <h3 class="mb-0 contact_section_header">  <i class="fas fa-user icon"></i> JOSEPH</h3>
 
 
                     <div class="row mt-2  ">
-                      <div class="col-md-12  Summary">
+                      <div class="col-md-12 Summary ">
 
+                        <div class="row mt-6 ">
+                            <!-- Summary -->
+                            <div class="col-md-3 ">
+                                <label class="text text-center">  <i class="fas fa-briefcase icon"></i>   Occupation </label>
+                                <span class="value text-center">Teacher</span>
+                            </div>
+
+                            <div class="col-md-3">
+                                <label class="text text-center"> <i class="fas fa-baby icon"></i>   BIRTH  </label>
+                                <span class="value"> 5-23-1995 </span>
+                            </div>
+                            <div class="col-md-3">
+                              <label class="text text-center">  <i class="fas fa-id-card"></i>  IDENTIFICATION NUMBER </label>
+                              <span class="value">012020202 </span>
+                            </div>
+                        </div>
 
                         <div class="row mt-6" >
                           <!-- Summary -->
-                          <div class="col-md-4  ">
-                            <label class="text text-center"> <i class="fas fa-bullhorn"></i>  <a href="index.html"> Announcements_send</a>  </label>
-                              <span class="value text-center"> <b>60000 </b> </span>
+                          <div class="col-md-3  ">
+                              <label class="text text-center"> <i class="fas fa-globe icon"></i>   ORIGIN </label>
+                              <span class="value text-center">Kenyan </span>
                           </div>
 
-                          <div class="col-md-4">
-                            <label class="text text-center"><i class="fas fa-clock"></i> <a href=""> Duration </a>  </label>
-                            <span class="value"> 1st Jan - 1nd Feb </span>
+                          <div class="col-md-3">
+                              <label class="text text-center"> <i class="fas fa-calendar-check icon"></i> End_Date  </label>
+                              <span class="value"> 6-7-2020 </span>
                           </div>
-
+                          <div class="col-md-3">
+                            <label class="text text-center"> <i class="fas fa-calendar-check icon"></i> <a href=""> Start_Date  </a>  </label>
+                            <span class="value"> 5-23-1995 </span>
+                          </div>
+                          <div class="col-md-3">
+                            <button class="btn text text-danger">  <i class="fas fa-trash"></i> Remove Joseph</button>
+                          </div>
                         </div>
 
                       </div>
 
                 </div>
               </div>
-
               <div class="col-sm-4">
-                <!-- <ol class="breadcrumb float-sm-end">
+                <ol class="breadcrumb float-sm-end">
                   <li class="breadcrumb-item"><a href="#" style="color: #00192D;">  <i class="bi bi-house"></i> Home</a></li>
                   <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
-                </ol> -->
+                </ol>
               </div>
-
             </div>
-            <!--end::Row-->
-          </div>
-          <!--end::Container-->
-        </div>
-        <div class="app-content">
-          <!--begin::Container-->
-          <div class="container-fluid">
-            <!-- Info boxes -->
-            <div class="row first mb-2 mt-2 rounded-circle">
 
-              <div class="col-md-12 d-flex justify-content-end">
+            <!-- End first Row -->
 
+            <!-- Second row start --><div class="row first mb-2 mt-3 rounded-circle">
 
+                <div class="col-md-6 d-flex justify-content-between">
+                  <button id="rent_details_btn" class="btn">  <i class="fas fa-calendar-check icon"></i> <a href="profile.html"> <b> Bills_Records </b> </a> </button>
 
-                  <button id="add_provider_btn" class="btn" style="background-color: #00192D; color: white; font-size: small;">   <i class="fa fa-bullhorn"></i>
-                  <b class="button_item" class="open-btn" onclick="opennotificationPopup()"> New_Announcement</b></button>
-
-              </div>
-              <!-- /.col -->
-            </div>
-        <!-- /.row -->
-
-
-
-
-            <!--end::Row-->
-            <!--begin::Row-->
-            <div class="row">
-              <!-- Start col -->
-              <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
-
-                    </div>
-
-                    <div class="card-body">
-                        <table id="Texts"  class="display" >
-                          <thead>
-                            <tr>
-                                <th scope="col" >Message ID</th>
-                                <th>Date</th>
-                                <th>Title</th>
-                                <th>Message</th>
-                                <th>Recepient</th>
-                                <th>Status</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr >
-                                <td scope="row" >13</td>
-                                <td>1/78/2019</td>
-                                <td>Rent Payments</td>
-                                <td>All Rent Payments...</td>
-                                <td>Crown Z, Manucho.. </td>
-                                <td>Draft</td>
-                                <td class="action" id="more_announcement_btn"> More&#x2026; </td>
-                            </tr>
-                            <tr>
-                                <td scope="row" >13</td>
-                                <td>1/78/2019</td>
-                                <td>Rent Payments</td>
-                                <td>All Rent Payments...</td>
-                                <td>Crown Z, Manucho.. </td>
-                                <td>Send</td>
-                                <td class="action" id="more_announcement_btn"> More&#x2026; </td>
-                            </tr>
-                            <tr>
-                                <td scope="row" >13</td>
-                                <td>1/78/2019</td>
-                                <td>Rent Payments</td>
-                                <td>All Rent Payments...</td>
-                                <td>Crown Z, Manucho.. </td>
-                                <td>Draft</td>
-                                <td class="action" id="more_announcement_btn"> More&#x2026; </td>
-                            </tr>
-                            <tr>
-                                <td scope="row" >13</td>
-                                <td>1/78/2019</td>
-                                <td>Rent Payments</td>
-                                <td>All Rent Payments...</td>
-                                <td>Crown Z, Manucho.. </td>
-                                <td>Send</td>
-                                <td class="action" id="more_announcement_btn"> More&#x2026; </td>
-                            </tr>
-                        </tbody>
-                        </table>
-
-
-
-                    </div>
-
-
-
-                    <div class="card-footer">
-
-                     </div>
+                  <button id="agreements_btn" class="btn"><i class="fas fa-calendar-check icon"></i>
+                       <a href="agreements.html"> <b> Agreements </b> </a>  </button>
 
                 </div>
 
+                <div class="col-md-6">
+                  <div style="display: flex; justify-content: end;">
 
-            </div>
+
+                  </div>
+                </div>
               <!-- /.col -->
             </div>
-            <!--end::Row-->
-          </div>
-          <!--end::Container-->
-        </div>
-        <!--end::App Content-->
-      </main>
-      <!--end::App Main-->
-      <!--begin::Footer-->
+
+            <div class="row mt-3"> <!-- second row -->
+
+              <div class="col-md-12">
+                <div class="card">
+
+
+                  <div class="card-body">
+                    <table id="rent" class="display" style="font-size: small;" >
+                      <thead>
+                        <tr>
+                            <th scope="col">DATE PAID</th>
+                                <th scope="col">AMOUNT PAID</th>
+                                <th scope="col">ARREAS</th>
+                                <th scope="col">ACTION</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                            <th scope="row">1/7/11</th>
+                                <td>KSH 10,000</td>
+                                <td>KSH 10,000</td>
+                                <td id="more">
+                                  <div id="more_icon">&#x2026;</div>
+                                  <br>
+                                  <div id="more_options">
+
+                                     <a href="#"class="" onclick="showOverlay()">Invoice</a>
+                                     <a href="#" id="showReceiptLink" onclick="openPopup()">Receipt</a>
+                      
+                                     <a href="#">Delete</a>
+                                     <a href="#">Edit</a>
+
+
+                                  </div>
+                                 </td>
+
+                        </tr>
+                        <tr>
+                        <th scope="row">2/7/11</th>
+                        <td>KSH 20,0000</td>
+                        <td>KSH 0</td>
+                        <td id="more">
+                          <div id="more_icon">&#x2026;</div>
+                          <br>
+                          <div id="more_options">
+                            <a href="#"class="" onclick="showOverlay()">Invoice</a>
+                            <a href="#" id="showReceiptLink" onclick="openPopup()">Receipt</a>
+                            <a href="#">Delete</a>
+                            <a href="#">Edit</a>
+                          </div>
+                         </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3/7/11</th>
+                        <td>KSH 10000</td>
+                        <td>KSH 0</td>
+                        <td id="more">
+                          <div id="more_icon">&#x2026;</div>
+                          <br>
+                          <div id="more_options">
+                             <a  href="#">Assign</a>
+                             <a href="#">Update</a>
+                             <a href="#">Delete</a>
+                             <a href="#">View</a>
+
+
+                          </div>
+                         </td>
 
 
 
-      <footer class="app-footer">
-        <!--begin::To the end-->
-        <div class="float-end d-none d-sm-inline">Anything you want</div>
-        <!--end::To the end-->
-        <!--begin::Copyright-->
-        <strong>
-          Copyright &copy; 2014-2024&nbsp;
-          <a href="https://adminlte.io" class="text-decoration-none" style="color: #00192D;"> JENGO PAY</a>.
-        </strong>
-        All rights reserved.
-        <!--end::Copyright-->
-      </footer>
-      <!--end::Footer-->
-    </div>
-    <!--end::App Wrapper-->
+                            </tr>
+                      </tbody>
+                    </table>
+                  </div>
 
+                  <div class="card-footer">
 
+                  </div>
 
-
-<!-- Overlay Cards -->
-
-
-
-
-
-
-
- <!-- Start View announcement -->
- <div class="view_announcement" id="view_announcement">
-  <div class="card content">
-   <div class="card-header view_announcement header">
-       <h5 class="mb-0">Rent Payments</h5>
-       <div id="close-overlay-btn" class="close-btn" > <b> &times;</b> </div>
-
-   </div>
-   <div class="card-body">
-       <p class="card-text">
-           All Rent Payments should be made before 24/01/17. Anyone who feels that they might not
-       <p class="card-text announcement">
-           All Rent Payments should be made before 24/01/17. Anyone who feels that they might not
-           be able to complete their dues on 24/01/17 should communicate to management before the due date.
-           Else, you face an eviction risk if you fail to pay your dues before the said date without a reasonable reason</p>
-
-           <p class="timestamp" id="timestamp"></p> <!-- Timestamp -->
-
-
-       <div class="Recipients border-top border-gray "> <p><strong>Recipients|</strong> All Employees</p>  </div>
-
-   </div>
-   <div class="card-footer view_announcement d-flex">
-       <button class="btn btn-danger btn-sm">Delete</button>
-       <button class="btn resend btn-sm">Resend</button>
-   </div>
- </div>
- </div>
-
-<!-- End view announcement -->
-
-<!-- Start of new announcement card-->
-<div class="container-fluid New_Announcement mt-5" id="New_Announcement">
-  <div class="card New_Announcement">
-      <div class="card-header text-white" style="background-color: #00192D; display: flex;">
-          <h5 class="mb-0">New Announcement</h5>
-         <div id="close-new_announcement-btn" class="close-btnOne" > <b> &times;</b> </div>
-      </div>
-      <div class="card-body">
-          <!-- Title -->
-          <div class="mb-3">
-              <label for="announcementTitle" class="form-label">Title</label>
-              <input type="text" class="form-control" id="announcementTitle" placeholder="Enter title">
-          </div>
-
-
-
-          <!-- Message -->
-          <div class="mb-3">
-              <label for="announcementMessage" class="form-label">Message</label>
-              <textarea class="form-control" id="announcementMessage" rows="5" placeholder="Write your message here"></textarea>
-          </div>
-
-          <!-- Recipients -->
-
-            <div class="mb-3 recipients-container" id="recipients-container">
-              <label for="recipientsSelect" class="form-label">Recipients</label>  <i class="fas fa-chevron-down"></i>
-              <div class="panel " >
-
-              <select class="form-select bg-dark text-white" id="recipientsSelect" multiple>
-                  <option value="all">All Employees</option>
-                  <option value="managers">Managers</option>
-                  <option value="tenants">Tenants</option>
-                  <option value="staff">Staff</option>
-              </select>
-
+                </div>
+              </div>
             </div>
-          </div>
+          
+            <!-- maintenance &repair cost overlay -->
+<div class="maintenancepopup-overlay" id="maintenancePopup">
+  <div class="maintenancepopup-content">
+    <button class="close-btn text-secondary" onclick="closemaintenancePopup()">×</button>
+    <h2 style="color: #00192D; font-size: medium;">Maintenance & Repair Cost</h2>
+    <div class="info">
+        <p><strong>Invoice No:</strong> #987654</p>
+        <p><strong>Date:</strong> 2025-02-13</p>
+        <p><strong>Property:</strong> Greenview Apartments</p>
+        <p><strong>Unit:</strong>A12</p>
 
 
-      </div>
-      <div class="card-footer d-flex justify-content-end">
-          <button type="button" class="btn btn-secondary me-2" id="saveDraftBtn">Add to Draft</button>
-          <button type="button"  class="btn" style="background-color: #FFC107; color: white;" id="sendAnnouncementBtn">Send</button>
+    </div>
+    <div class="cost-details">
+        <p><strong>Issue Description:</strong> Broken door handle</p>
+        <p><strong>Service Provider:</strong> ABC Repairs Ltd.</p>
+        <p><strong>Estimated Cost:</strong> KSH 4,500</p>
+        <p><strong>Actual Cost:</strong> KSH 5,000</p>
+        <p class="total"><strong>Total Cost:</strong> KSH 5,000</p>
+    </div>
+    <p style="text-align: center;">Thank you!</p>
+
+    <button class="receipt-btn" id="downloadReceiptBtn" style="color: #FFC107;">Download</button>
+
+      
+  </div>
+</div>
+<!-- End maintenanceoverlay -->
+            
+
+<!-- Farst Overlay (Receipt) -->
+<div class="popup-overlay" id="complaintPopup">
+  <div class="popup-content">
+    <button class="close-btn text-secondary" onclick="closePopup()">×</button>
+        <h2 style="color: #00192D; font-size: medium;">Payment Receipt</h2>
+        <div class="info" id="inform">
+            <p><strong>Receipt No:</strong>#123456</p>
+            <p><strong>Date:</strong> 2025-02-13</p>
+            <p><strong>Tenant:</strong> John Doe</p>
+        </div>
+        <div class="receipt">
+          <p><strong>Property:</strong>Manucho</p>
+          <p><strong>House Unit:</strong>A12</p>
+          <p><strong>Mpesa:</strong> KSH 10,0000</p>
+          <p><strong>Transaction:</strong> TBM34KGNJ8</p>
+          <p class="total"><strong>Total:</strong> KSH10,000.00</p>
+
+        </div>
+        <p style="text-align: center;" style="color:#00192D;">Thank you for your payment!</p>
+        <div style="display: flex; justify-content: flex-end;">
+          <button style="background-color: white; color:#FFC107; padding: 10px 20px; border: none; border-radius: 10px; cursor: pointer;">
+            DOWNLOAD
+          </button>
       </div>
   </div>
 </div>
-<!-- end of new announcement card-->
+<!-- end -->
+
+
+ <!-- The invoice Overlay -->
+ <div id="invoiceOverlay" class="overlay">
+  <div class="overlay-content">
+    <button class="close-btn" onclick="closeOverlay()">×</button>
+    <div id="invoice" style="text-align: start;">
+    <b><h2 style="color:#FFC107;; font-size: medium;"><strong>Invoice Details</strong></h2></b>
+    <p><strong>Invoice Number:</strong> 00123</p>
+    <p><strong>Invoice Date:</strong> February 11, 2025</p>
+    <p><strong>Due Date:</strong> February 25, 2025</p>
+</div>
+
+     <table>
+        <thead>
+            <tr>
+                <th style="color:#FFC107 ;">Rent</th>
+                <th style="color:#FFC107 ;">Water</th>
+               <th style="color:#FFC107 ;">Garbage</th>
+               <th style="color:#FFC107 ;">Late fees</th>
+               <!-- <th>Maintenance</th> -->
 
 
 
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+               <td>KSH3000</td>
+               <td>KSH500</td>
+               <td>KSH200</td>
+               <td>KSH200</td>
+               </tr>
+        </tbody>
+        <tfoot>
+            <tr class="total-row">
+                <td colspan="3" style="text-align: right;">Total  Due</td>
+                <td>KSH39,000</td>
+            </tr>
+            <tr class="total-row">
+              <td colspan="3" style="text-align: right;">PAID</td>
+              <td>KSH40,000</td>
+          </tr>
+            <tr class="total-row">
+                <td colspan="3" style="text-align: right;">Balance</td>
+                <td>KSH200</td>
+            </tr>
+        </tfoot>
+      </table>
+      <div>
 
-<!-- notification popup -->
-<div class="notificationpopup-overlay" id="notificationPopup">
-  <div class="notificationpopup-content">
-    <button class="close-btn text-secondary" onclick="closenotificationPopup()">×</button>
-    <h2 style="color: #00192D;">Announcement</h2>
+      </div>
 
-    <label for="property">Recepients:</label>
-    <select id="property" required>
-      <option value=""disabled>Select Recepient</option>
-      <option value="High">Manucho</option>
-      <option value="Moderate">Ben 10</option>
-      <option value="Low">Alpha</option>
-    </select>
-
-    <textarea id="notes" name="notes" rows="10" cols="98" placeholder="Enter any additional information..."></textarea>
-
-      <button type="submit" class="submit-btn" style="background-color: #00192D; color: #f1f1f1;">SEND</button>
+      <div style="display: flex; justify-content: flex-end;">
+        <button style="background-color: white; color:#FFC107; padding: 10px 20px; border: none; border-radius: 10px; cursor: pointer;">
+          DOWNLOAD
+        </button>
+    </div>
+    
   </div>
 </div>
 
-<script src="announcements.js"></script>
 
-<!-- End Notification popup -->
 
-<!-- end overlay card. -->
 
+
+
+
+
+<!--
+        <div class="overlaying" id="overlaying">
+          <div class="invoicy-container">
+          <div class="receipt-container" id="receipt">
+            <button class="close-btn" onclick="closeOverlay()">×</button>
+            <h2>Payment Receipt</h2>
+            <p> Nairobi,  KENYA</p>
+            <p><strong>Date:</strong> <span id="date"></span></p>
+
+            <table>
+              <td>Manucho Apartments</td>
+              <td>John</td>
+              <th>A11</th>
+              <td>KSH80,000</td>
+              <td>KSH80,000</td>
+              <td>MPESA</td>
+              <td>TBM34KGNJ8</td>
+              <td>10-12-2025</td>
+              <td>KSH0</td>
+            </table>
+        </div>
+
+        <button class="print-btn" onclick="printReceipt()">Print Receipt</button>
+     -->
+
+
+    <!--end::App Wrapper-->
     <!--begin::Script-->
     <!--begin::Third Party Plugin(OverlayScrollbars)-->
 
+<!--Begin sidebar script -->
+<script>
+  fetch('../bars/sidebar.html')  // Fetch the file
+      .then(response => response.text()) // Convert it to text
+      .then(data => {
+          document.getElementById('sidebar').innerHTML = data; // Insert it
+      })
+      .catch(error => console.error('Error loading the file:', error)); // Handle errors
+</script>
+<!-- end sidebar script -->
 
+    <script>
+      // Function to print the receipt
+      function printReceipt() {
+          window.print(); // Opens the print dialog
+      }
 
-<!-- Overlay scripts -->
- <!-- View announcements script -->
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+      // Set current date on the receipt
+      document.getElementById("date").textContent = new Date().toLocaleDateString();
+  </script>
 
-
-
-
- <!-- sidebar dropdowns-->
-
-
-
-
-<!-- create notification -->
+<!--  Maintenance script -->
 <script>
   // Function to open the complaint popup
-  function opennotificationPopup() {
-    document.getElementById("notificationPopup").style.display = "flex";
+  function maintenancePopup() {
+    document.getElementById("maintenancePopup").style.display = "flex";
   }
 
   // Function to close the complaint popup
-  function closenotificationPopup() {
-    document.getElementById("notificationPopup").style.display = "none";
+  function closemaintenancePopup() {
+    document.getElementById("maintenancePopup").style.display = "none";
   }
 </script>
+
+<!-- end Maintenance script -->
+
+<!-- reciept overlay -->
+<script>
+  // Function to open the receipt popup
+  function openPopup() {
+    document.getElementById("complaintPopup").style.display = "flex";
+  }
+
+  // Function to close the receipt popup
+  function closePopup() {
+    document.getElementById("complaintPopup").style.display = "none";
+  }
+</script>
+<!-- end receipt overlay -->
+<!-- invoice overlay -->
+<script>
+  function showOverlay() {
+    document.getElementById('invoiceOverlay').style.display = 'flex';
+  }
+
+  // function closeOverlay() {
+  //   document.getElementById('.overlay').style.display = 'none';
+  // }
+</script>
+
+
+ <!-- close overlay -->
+<script>
+  function closeOverlay() {
+    document.querySelector('.overlay').style.display = 'none';
+  }
+</script>
+
+<script>
+  // Get the overlay and link elements
+const receiptOverlay = document.getElementById('receiptOverlay');
+const showReceiptLink = document.getElementById('showReceiptLink');
+const downloadReceiptBtn = document.getElementById('downloadReceiptBtn');
+const closeReceiptBtn = document.getElementById('closeReceiptBtn');
+
+// Show the receipt overlay when clicking the "Show Receipt" link
+showReceiptLink.addEventListener('click', function(event) {
+  event.preventDefault();  // Prevent the default link behavior (navigation)
+  receiptOverlay.style.display = 'flex';  // Show the overlay
+});
+
+// Hide the receipt overlay when clicking the "Download Receipt" button
+downloadReceiptBtn.addEventListener('click', function() {
+  alert('Downloading receipt...');  // Example action (you can add actual download functionality here)
+  receiptOverlay.style.display = 'none';  // Hide the overlay after download
+});
+
+// Close the receipt overlay when clicking the "Close" button
+closeReceiptBtn.addEventListener('click', function() {
+  receiptOverlay.style.display = 'none';  // Hide the overlay
+});
+
+</script>
+
+<!-- Begin script for datatable -->
+<script>
+  $(document).ready(function() {
+   $('#rent').DataTable({
+       "paging": true,
+       "searching": true,
+       "info": true,
+       "lengthMenu": [5, 10, 25, 50],
+       "language": {
+           "search": "Filter records:",
+           "lengthMenu": "Show _MENU_ entries"
+       }
+   });
+});
+
+$(document).ready(function() {
+   $('#agreements').DataTable({
+       "paging": true,
+       "searching": true,
+       "info": true,
+       "lengthMenu": [5, 10, 25, 50],
+       "language": {
+           "search": "Filter records:",
+           "lengthMenu": "Show _MENU_ entries"
+       }
+   });
+});
+
+</script>
+
+<script>
+
+  // JavaScript to handle hover and hide functionality
+  const  more= document.getElementById("more");
+  const more_icon = document.getElementById("more_icon");
+  const more_options = document.getElementById("more_options");
+
+  // Show panel when hovering over the accordion
+  more_icon.addEventListener("mouseenter", () => {
+    more_options.style.display = "block";
+  });
+
+  // Hide panel when moving out of both accordion and panel
+   more.addEventListener("mouseleave", () => {
+    more_options.style.display = "none";
+});
+
+
+</script>
+
+<!-- End script for data_table -->
+
 
     <script
       src="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.10.1/browser/overlayscrollbars.browser.es6.min.js"
@@ -632,58 +862,6 @@
       crossorigin="anonymous"
     ></script>
     <!--end::Required Plugin(popperjs for Bootstrap 5)--><!--begin::Required Plugin(Bootstrap 5)-->
-
-<!-- script for occordion -->
-<script>
-
-        // JavaScript to handle hover and hide functionality
-        const filterContainer = document.getElementById("filter-container");
-        const accordion = document.getElementById("filter");
-        const panel = document.getElementById("panel");
-
-        // Show panel when hovering over the accordion
-        accordion.addEventListener("mouseenter", () => {
-            panel.style.display = "block";
-        });
-
-        // Hide panel when moving out of both accordion and panel
-         filterContainer.addEventListener("mouseleave", () => {
-             panel.style.display = "none";
-      });
-
-
-</script>
-<!-- End for Occordion script -->
-
-    <!-- Begin script for datatable -->
-    <script>
-       $(document).ready(function() {
-        $('#Texts').DataTable({
-            "paging": true,
-            "searching": true,
-            "info": true,
-            "lengthMenu": [5, 10, 25, 50],
-            "language": {
-                "search": "Filter records:",
-                "lengthMenu": "Show _MENU_ entries"
-            }
-        });
-    });
-
-    </script>
-    <!-- End script for data_table -->
-
-<!--Begin sidebar script -->
-<script>
-  fetch('../bars/sidebar.html')  // Fetch the file
-      .then(response => response.text()) // Convert it to text
-      .then(data => {
-          document.getElementById('sidebar').innerHTML = data; // Insert it
-      })
-      .catch(error => console.error('Error loading the file:', error)); // Handle errors
-</script>
-<!-- end sidebar script -->
-
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
       integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
@@ -712,26 +890,8 @@
         }
       });
     </script>
-
-
-<script>
-
-  document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll(".nav-item > .nav-link").forEach((navLink) => {
-      navLink.addEventListener("click", function (e) {
-        // Check if the link has a submenu (dropdown)
-        let dropdown = this.nextElementSibling;
-        if (dropdown && dropdown.classList.contains("nav-treeview")) {
-          e.preventDefault(); // Prevents "#" from appearing in the URL
-          dropdown.classList.toggle("show"); // Toggles dropdown visibility
-        }
-      });
-    });
-  });
-
-
-     </script>
-
+    <!-- Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <!--end::OverlayScrollbars Configure-->
     <!-- OPTIONAL SCRIPTS -->
     <!-- apexcharts -->
@@ -888,6 +1048,26 @@
       //-----------------
       // - END PIE CHART -
       //-----------------
+    </script>
+    <script>
+      document.getElementById("exportButton").addEventListener("click", function() {
+        // Example data (can be your table data or an array of objects)
+        const data = [
+          { Name: "John", Age: 30, City: "New York" },
+          { Name: "Jane", Age: 25, City: "London" },
+          { Name: "Mark", Age: 35, City: "Paris" }
+        ];
+
+        // Convert data to a worksheet
+        const ws = XLSX.utils.json_to_sheet(data);
+
+        // Create a new workbook and append the worksheet
+        const wb = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(wb, ws, "Sheet1");
+
+        // Export the workbook as an Excel file
+        XLSX.writeFile(wb, "ExportedData.xlsx");
+      });
     </script>
     <!--end::Script-->
   </body>
