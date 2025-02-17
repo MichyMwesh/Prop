@@ -77,7 +77,7 @@
               </a>
             </li>
             <li class="nav-item d-none d-md-block"><a href="#" class="nav-link">Home</a></li>
-            <li class="nav-item d-none d-md-block"><a href="#" class="nav-link">Contact</a></li>
+            <!-- <li class="nav-item d-none d-md-block"><a href="#" class="nav-link">Contact</a></li> -->
           </ul>
           <!--end::Start Navbar Links-->
           <!--begin::End Navbar Links-->
@@ -517,6 +517,27 @@
  </div>
  </div>
 
+
+<div class="notificationpopup-overlay" id="notificationPopup">
+  <div class="notificationpopup-content">
+    <button class="close-btn text-secondary" onclick="closenotificationPopup()">×</button>
+    <h2 style="color: #00192D;">Announcement</h2>
+
+    <label for="property">Recepients:</label>
+    <select id="property" required>
+      <option value=""disabled>Select Recepient</option>
+      <option value="High">Manucho</option>
+      <option value="Moderate">Ben 10</option>
+      <option value="Low">Alpha</option>
+    </select>
+
+    <textarea id="notes" name="notes" rows="10" cols="98" placeholder="Enter any additional information..."></textarea>
+
+      <button type="submit" class="submit-btn" style="background-color: #00192D; color: #f1f1f1;">SEND</button>
+  </div>
+</div>
+
+
   <!-- Lease Modal -->
 <div class="modal fadey" id="leaseyModal" tabindex="-1" aria-labelledby="leaseyModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
@@ -610,7 +631,9 @@
 
         </select>
          <!-- Submit Button -->
-         <button type="submit" class="bossy"> MAKE PAYMENT</button>
+         <button type="submit" class="submit-btn" style="background-color: #00192D; color: #f1f1f1;">MAKE PAYMENT</button>
+
+         <!-- <button type="submit" class="bossy"> MAKE PAYMENT</button> -->
       </div>
 
 
